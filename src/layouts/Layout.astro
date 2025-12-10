@@ -8,7 +8,7 @@ const { title, description = "SynerGrowth - Publicidad Digital y Generación de 
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -20,7 +20,7 @@ const { title, description = "SynerGrowth - Publicidad Digital y Generación de 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <title>{title}</title>
   </head>
-  <body class="antialiased">
+  <body class="antialiased bg-gray-950 text-white">
     <slot />
   </body>
 </html>
@@ -32,7 +32,33 @@ const { title, description = "SynerGrowth - Publicidad Digital y Generación de 
   
   body {
     margin: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #030712;
+    color: #ffffff;
+  }
+
+  /* Smooth scrolling */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  /* Performance optimizations */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Focus styles for accessibility */
+  *:focus-visible {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+  }
+
+  /* Selection color */
+  ::selection {
+    background-color: rgba(59, 130, 246, 0.3);
+    color: #ffffff;
   }
 </style>
-
